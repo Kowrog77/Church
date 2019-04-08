@@ -1,0 +1,30 @@
+
+
+.container{
+  background-color: #90a8ce;
+  padding: 20px;
+
+}
+.navbar{
+  margin-bottom: 20px;
+}
+
+.carousel{
+  margin-bottom: 20px;
+  
+}
+.socialMedia{
+  width:30px;
+  height: 30px;
+  float:right;
+
+
+}
+
+
+@media (max-width:400px){
+.logo{
+width: 75%;
+height:75%;
+}
+}
