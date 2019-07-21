@@ -33,7 +33,7 @@
             <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Events</a>
+            <a class="nav-link" href="Events_display.php">Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
