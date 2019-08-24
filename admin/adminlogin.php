@@ -5,6 +5,8 @@ include "../model/admin_db.php";
 $pageName="Mount Comfort Admin";
 $favicon="../images/favicon.jpg";
 $styles ="../css/styles.css";
+$logo = "../images/logo.jpg";
+$index="../index.php";
 $userName = filter_input(INPUT_POST,'username');
 $passWord=filter_input(INPUT_POST,'password');
 $lo = filter_input(INPUT_GET,'lo');
@@ -23,7 +25,7 @@ if($lo =="y"){
             if($passWord==$Users['password']){
                 $_SESSION['adminvalid']="yesAdmin";
                
-                header("Location: ./Events.php");
+                header("Location: ./sermons/sermons.php");
             }
             else{
                 echo("<div class='alert alert-warning' role='alert'>

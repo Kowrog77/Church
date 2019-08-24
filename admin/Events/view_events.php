@@ -3,13 +3,15 @@
     <input type="hidden" name ="addID" value="yes">
     <button type="submit" class="btn btn-secondary btn-lg btn-block">Add Event</button>
 </form>
-  <?php foreach( $arrayposts as $posts){
+  <?php 
+    usort($arrayposts,"sortByID");
+    foreach($arrayposts as $posts){
     ?>
     <div class="card mx-auto" style="width: 90%; height: auto; margin:20px; padding:10px">
   <?php
   if($posts['image_ID'] != NULL){
    ?>
-   <img src="./images/<?= $posts['image_ID']?>" class="card-img-top" alt="<?= $posts['image_ID']?> Image" style="width:75%; height:auto;">
+   <img src="../images/<?= $posts['image_ID']?>" class="card-img-top" alt="<?= $posts['image_ID']?> Image" style="width:75%; height:auto;">
   <?php
   }
   ?>

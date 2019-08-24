@@ -6,7 +6,11 @@ function getallposts(){
     $arrayposts = $pdostate->fetchAll();
     return $arrayposts;
 }
-function getByIDposts($post_ID){
+function sortByID($a,$b){
+    return ($b['post_ID'] - $a['post_ID']);
+
+}
+function getByIDpost($post_ID){
     global $connect;
     $sql = "SELECT * FROM post where post_ID = $post_ID";
     $pdostate = $connect->query($sql);
@@ -26,6 +30,7 @@ function getAlltypes(){
     $arraytype=$pdoStatement->fetchAll();
     return $arraytype;
 }
+
 function addPost($date_event,$date_post,$link,$image_name,$type,$details){
     global $connect;
     $sqlAdd="INSERT INTO `post`( `type_ID`, `post_info`, `image_ID`, `link`, `date_event`, `date_post`) VALUES ('$type','$details','$image_name','$link','$date_event','$date_post')";
@@ -44,4 +49,17 @@ function getatype($type_ID){
     $pdos =$connect->query($sql);
     $typename =$pdos->fetch();
     return $typename['typename'];
+}
+function editPost($date_event,$date_post,$link,$name,$type,$details,$postID){
+    
+    global $connect;
+    $sqlAdd ="UPDATE `post` SET `type_ID`='$type',`post_info`='$details',`image_ID`='$name',`link`='$link',`date_event`='$date_event',`date_post`='$date_post' WHERE `post_ID` = '$postID'";
+    $pdos=$connect->query($sqlAdd);
+    ?>
+    <div class="alert alert-warning" role="alert">
+        
+        <p>Post Edited</p>
+        
+    </div>
+ <?php  
 }

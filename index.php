@@ -7,7 +7,7 @@ $styles ="./css/styles.css";
 
     <?php
     include "./view/header.php";
-    include "./models/database.php";
+    include "./model/database.php";
     ?>
 
 

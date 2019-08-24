@@ -1,6 +1,6 @@
 <ul class="nav justify-content-center navbar-light bg-light rounded">
   <li class="nav-item">
-    <a class="nav-link active" id="admin" href="./admin/Events.php"style="color:black">&copy Koen Rogers</a>
+    <a class="nav-link active" id="admin" href="./admin/sermons/sermons.php"style="color:black">&copy Koen Rogers</a>
   </li>
   <li>
   <a href="https://www.facebook.com/pages/Mount-Comfort-Church/110884565642309" target="_blank">
