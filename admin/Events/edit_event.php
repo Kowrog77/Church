@@ -35,10 +35,11 @@
     </div>
   <div class="form-group">
     <label for="image"> Edit Image:</label>
-  <div class ="custom-file">
-      <label  class="custom-file-label" for="image">Choose Image</label><br>
-          <input type="file" class="custom-file-input" name="image" id="image" aria-describedby="inputGroupFileAddon01" accept="image/*">
-  </div>
+    <div class ="custom-file">
+        <label  class="custom-file-label" for="image">Choose Image</label><br>
+            <input type="file" class="custom-file-input" name="image" id="image" aria-describedby="inputGroupFileAddon01" accept="image/*">
+    </div>
+    
   <div class="form-group">
     <label for="">Types</label>
     <select class="form-control" name="type" >

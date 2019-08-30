@@ -7,12 +7,12 @@
     <div class="card mx-auto" style="width: 90%; height: auto; margin:20px; padding:10px">
 
     
-    <img src="./boardphotos/<?= $member['photo']?>" class="card-img-top" alt="Photo of <?= $member['name']?> Image" style="width:75%; height:auto;">
+    <img src="./boardphotos/<?= $member['photo']?>" class="card-img-top rounded-circle" alt="Photo of <?= $member['name']?> Image" style="width:25%; height:auto;">
     <div class="card-body">
     
         <h5 class="card-title">Name: <?= $member['name']?></h5>
         
-        <p class="card-text">Title: <?= $member['postion']?>
+        <p class="card-text">Title: <?= $member['position']?>
         <?php
         if($member['contact']!=Null){
             ?>

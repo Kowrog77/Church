@@ -15,4 +15,16 @@ function sortByID($a,$b){
     $pdostate = $connect->query($sql);
     $member = $pdostate->fetch();
     return $member;
+}function editMember($Name,$name,$title,$contact,$bID){
+    
+    global $connect;
+    $sqlAdd ="UPDATE `board` SET `name`='$Name',`position`='$title',`photo`='$name',`contact`='$contact' WHERE `bID` ='$bID'";
+    $pdos=$connect->query($sqlAdd);
+    ?>
+    <div class="alert alert-warning" role="alert">
+        
+        <p>Post Edited</p>
+        
+    </div>
+ <?php  
 }
