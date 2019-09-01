@@ -3,7 +3,9 @@
     <input type="hidden" name ="addID" value="yes">
     <button type="submit" class="btn btn-secondary btn-lg btn-block">Add Event</button>
 </form>
-  <?php foreach( $arrayposts as $posts){
+  <?php 
+    usort($arrayposts,"sortByID");
+    foreach($arrayposts as $posts){
     ?>
     <div class="card mx-auto" style="width: 90%; height: auto; margin:20px; padding:10px">
   <?php
@@ -20,7 +22,7 @@
       <p class="card-text">Post Details: <?= $posts['post_info']?>
       </br> Type of Post:
       <?php 
-          $typename = getatype($posts['type_ID']);
+          $typename = getatype($posts['types_ID']);
           echo($typename);
           
       ?>

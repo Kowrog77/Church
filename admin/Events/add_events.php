@@ -2,7 +2,7 @@
 if(isset($_POST['date_post'])){
     // echo("Worked!");
     $name = $_FILES['image']['name'];
-    $tmpname = $_FILES['image']['tmp_name'];;
+    $tmpname = $_FILES['image']['tmp_name'];
     $dir =getcwd().DIRECTORY_SEPARATOR .'images'.DIRECTORY_SEPARATOR. $name;
     
     move_uploaded_file($tmpname,$dir);
@@ -19,7 +19,7 @@ $arraytypes = getAlltypes();
   <div class="form-group">
     <label for="date">Date of Event:</label>
     <input type="text" class="form-control" name="date_event" placeholder="<?=date("m/d/Y")?>">
-    <input type="hidden" name="date_post" value="<?=date("m/d/Y")?>" >
+    <input type="hidden" name="date_post" value="<?=date("m-d-Y")?>" >
   </div>
   <div class="form-group">
     <label for="">Link:</label>

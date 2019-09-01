@@ -1,7 +1,7 @@
 
 
 .container{
-  background-color: #90a8ce;
+  background-color: #7596d4;
  padding:20px;
 
 }
@@ -20,7 +20,36 @@
 
 
 }
-
+.header{
+  background-color: #d6eaff4f;
+  font-weight: bold;
+  text-align: center;
+}
+.eventCard{
+  width: 75%; 
+  height: auto;
+   margin:20px; 
+   padding:5px;
+   background-color: #ffffff00
+}
+.eventImage{
+  width:80%; 
+  height:auto;
+}
+.eventDetails{
+  margin:10px;
+  padding:10px;
+  border:10px;
+  width:80%; 
+  height:auto;
+  background: #77d8c883;
+}.datePost{
+  color:black;
+  float: right;
+}
+a{
+  color: #2c4cdb;
+}
 
 @media (max-width:400px){
 .logo{
