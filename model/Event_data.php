@@ -1,5 +1,7 @@
 <?php
+$typeID=filter_input(INPUT_GET,'type');
 $arrayposts = getallposts();
+
 $arraytypes = getAlltypes();
 $delId= filter_input(INPUT_GET,'delID');
 $editID= filter_input(INPUT_GET,'editID');
@@ -10,4 +12,5 @@ $date_post= filter_input(INPUT_POST,'date_post');
 $link= filter_input(INPUT_POST,'link');
 $image= filter_input(INPUT_POST,'image');
 $type= filter_input(INPUT_POST,'type');
+
 $details=filter_input(INPUT_POST,"details");

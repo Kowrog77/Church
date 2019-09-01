@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2019 at 04:16 AM
+-- Generation Time: Sep 01, 2019 at 03:20 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `mount_comfort_church1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `board`
+--
+
+CREATE TABLE `board` (
+  `bID` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `D_E` varchar(1) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `board`
+--
+
+INSERT INTO `board` (`bID`, `name`, `position`, `D_E`, `photo`, `contact`) VALUES
+(1, 'Tom Dykes 44', 'Pastor', 'P', 'default.png', '@gmail'),
+(2, 'Art Hesse', 'Chairman of the Board', 'E', 'Art_Hessee.jpg', ''),
+(3, 'Mike Hall', 'Elder', 'D', 'Mike_Hall.jpg', '@gmail'),
+(4, 'Mark Powell', 'Elder', 'E', 'Mark_Powell.jpg', ''),
+(5, 'Ken Rogers', 'Elder', 'E', 'Kenny_Rogers.jpg', ''),
+(6, 'Brent Gilstrap', 'Chairman of Deacons', 'D', 'Brent_ Gilstrap.jpg', ''),
+(7, 'Roger Leimkuehler', 'Deacon', 'D', 'Roger.jpg', ''),
+(8, 'David Reed', 'Deacon', 'D', 'Dave_ Reed.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -49,7 +78,7 @@ INSERT INTO `login_info` (`username`, `password`, `userID`) VALUES
 
 CREATE TABLE `post` (
   `post_ID` int(11) NOT NULL,
-  `type_ID` int(11) NOT NULL,
+  `types_ID` int(11) NOT NULL,
   `post_info` varchar(255) NOT NULL,
   `image_ID` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
@@ -61,9 +90,11 @@ CREATE TABLE `post` (
 -- Dumping data for table `post`
 --
 
-INSERT INTO `post` (`post_ID`, `type_ID`, `post_info`, `image_ID`, `link`, `date_event`, `date_post`) VALUES
-(1, 7, 'Afirca Trip', 'africa_trip.jpg', 'https://www.youtube.com/watch?v=1SYE38mc8g8', '05/03/2119', '0000-00-00 00:00:00'),
-(17, 3, 'Noah the Best Boy\r\n', 'sp b.jpg', 'https://www.cardkingdom.com/', '07/21/2019', '07/21/2019');
+INSERT INTO `post` (`post_ID`, `types_ID`, `post_info`, `image_ID`, `link`, `date_event`, `date_post`) VALUES
+(29, 1, 'k;', 'sp b.jpg', 'https://www.cardkingdom.com/', '05/03/211', '08-27-2019 '),
+(31, 4, 'k;', '218916482-cool-video-game-wallpapers.jpg', 'https://www.cardkingdom.com/', '05/03/211', '08-30-2019 '),
+(32, 2, 'k;', 'mtcmft_web_ads_1.jpg', 'https://www.cardkingdom.com/', '07/21/2019', '08-30-2019 '),
+(33, 1, 'k;', 'africa_trip.jpg', 'https://www.cardkingdom.com/', '05/03/211', '08-30-2019');
 
 -- --------------------------------------------------------
 
@@ -72,7 +103,7 @@ INSERT INTO `post` (`post_ID`, `type_ID`, `post_info`, `image_ID`, `link`, `date
 --
 
 CREATE TABLE `post_type` (
-  `type_ID` int(11) NOT NULL,
+  `types_ID` int(11) NOT NULL,
   `typename` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -80,17 +111,42 @@ CREATE TABLE `post_type` (
 -- Dumping data for table `post_type`
 --
 
-INSERT INTO `post_type` (`type_ID`, `typename`) VALUES
+INSERT INTO `post_type` (`types_ID`, `typename`) VALUES
 (1, 'Mens'),
 (2, 'Womens'),
 (3, 'Youth'),
-(5, 'Sermons'),
-(6, 'Worship'),
-(7, 'Misc');
+(4, 'Worship'),
+(5, 'Misc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sermons`
+--
+
+CREATE TABLE `sermons` (
+  `serID` int(11) NOT NULL,
+  `video_link` varchar(255) NOT NULL,
+  `Summary` varchar(255) NOT NULL,
+  `date_sermon` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sermons`
+--
+
+INSERT INTO `sermons` (`serID`, `video_link`, `Summary`, `date_sermon`) VALUES
+(1, 'https://www.youtube.com/embed/1SYE38mc8g8', 'Bible Verse  ', '4/21/2108');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `board`
+--
+ALTER TABLE `board`
+  ADD PRIMARY KEY (`bID`);
 
 --
 -- Indexes for table `login_info`
@@ -108,11 +164,23 @@ ALTER TABLE `post`
 -- Indexes for table `post_type`
 --
 ALTER TABLE `post_type`
-  ADD PRIMARY KEY (`type_ID`);
+  ADD PRIMARY KEY (`types_ID`);
+
+--
+-- Indexes for table `sermons`
+--
+ALTER TABLE `sermons`
+  ADD PRIMARY KEY (`serID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `board`
+--
+ALTER TABLE `board`
+  MODIFY `bID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `login_info`
@@ -124,13 +192,19 @@ ALTER TABLE `login_info`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `post_type`
 --
 ALTER TABLE `post_type`
-  MODIFY `type_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `types_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `sermons`
+--
+ALTER TABLE `sermons`
+  MODIFY `serID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

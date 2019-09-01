@@ -18,22 +18,21 @@ include "./model/Event_data.php";
     usort($arrayposts,"sortByID");
     foreach($arrayposts as $posts){
     ?>
-    <div class="card mx-auto " style="width: 50%; height: auto; margin:20px; padding:10px">
-  <?php
-  if($posts['image_ID'] != NULL){
-   ?>
-   <img src="./admin/images/<?= $posts['image_ID']?>" class="card-img-top mx-auto rounded" alt="<?= $posts['image_ID']?> Image" style="width:75%; height:auto;">
-  <?php
-  }
-  ?>
+    <div class="card mx-auto eventCard border-0" >
+        <?php
+        if($posts['image_ID'] != NULL){
+        ?>
+            <img src="./admin/Events/images/<?= $posts['image_ID']?>" class="card-img-top mx-auto rounded eventImage" alt="<?= $posts['image_ID']?> Image" >
+        <?php
+            }
+            ?>
     
-  
-    <div id="Event" class="card-body border border-dark rounded mx-auto" >
+    <div class="card-body  text-white rounded mx-auto eventDetails" >
       <h5 class="card-title">Date of Event: <?= $posts['date_event']?></h5>
       <p class="card-text">Post Details: <?= $posts['post_info']?>
       </br> Type of Post:
       <?php 
-          $typename = getatype($posts['type_ID']);
+          $typename = getatype($posts['types_ID']);
           echo($typename);
           
       ?>
@@ -41,7 +40,7 @@ include "./model/Event_data.php";
       </br>
       Link: <a href ="<?= $posts['link']?>" target ="_blank"> <?= $posts['link']?></a>
       </p>
-      <p class="card-text"><small class="text-muted">Date Posted:<?= $posts['date_post']?></small></p>
+      <p class="card-text"><small class="datePost">Date Posted:<?= $posts['date_post']?></small></p>
     </div>
    
   </div>
@@ -54,5 +53,5 @@ include "./model/Event_data.php";
 </div>
 <?php
 
-include "./view/Footer.php"?>
+include "./view/Footer.php";
 ?>

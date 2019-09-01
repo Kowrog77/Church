@@ -16,7 +16,7 @@
   editPost($date_event,$date_post,$link,$name,$type,$details,$post['post_ID']);
   header("Location: ./Events.php");
 }
- $typename = getatype($post['type_ID']);
+ $typename = getatype($post['types_ID']);
  ?>
 <form  method="post" enctype="multipart/form-data">
   <div class="form-group">
@@ -31,7 +31,7 @@
   <div>
         <label for="photo"> Current Photo</label>
         <br>
-        <img  class="rounded" src="../images/<?= $post['image_ID']?>" id="currentImage"style="width:25%; height:auto;">
+        <img  class="rounded" src="./images/<?= $post['image_ID']?>" id="currentImage"style="width:25%; height:auto;">
     </div>
   <div class="form-group">
     <label for="image"> Edit Image:</label>
@@ -45,7 +45,7 @@
     <select class="form-control" name="type" >
       <?php
       foreach($arraytypes as $types){
-        ?><option value="<?=$types['type_ID']?>""
+        ?><option value="<?=$types['types_ID']?>""
          <?php
         if($types['typename'] == $typename){
             echo('selected');

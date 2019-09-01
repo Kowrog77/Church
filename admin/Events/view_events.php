@@ -11,7 +11,7 @@
   <?php
   if($posts['image_ID'] != NULL){
    ?>
-   <img src="../images/<?= $posts['image_ID']?>" class="card-img-top" alt="<?= $posts['image_ID']?> Image" style="width:75%; height:auto;">
+   <img src="./images/<?= $posts['image_ID']?>" class="card-img-top" alt="<?= $posts['image_ID']?> Image" style="width:75%; height:auto;">
   <?php
   }
   ?>
@@ -22,7 +22,7 @@
       <p class="card-text">Post Details: <?= $posts['post_info']?>
       </br> Type of Post:
       <?php 
-          $typename = getatype($posts['type_ID']);
+          $typename = getatype($posts['types_ID']);
           echo($typename);
           
       ?>
