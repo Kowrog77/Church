@@ -15,6 +15,32 @@ $arrayposts=getByTypepost($typeID);
 <div class="container">
 
 <?php
+  switch ($typeID) {
+  case 1:
+    // Mens
+    include "./ministries/mens.php"
+    break;
+  
+  case 2 :
+    //Womens
+    include "./ministries/womens.php"
+    break;
+  case 3:
+    //Youth
+    include "./ministries/youth.php"
+    break;
+  case 4:
+    // Worship
+    include "./ministries/worship.php"
+    break;
+  case 5:
+  include "./ministries/default.php"
+  // Misc
+  break;
+  default:
+    header("Location: index.php")
+    break;
+  }
 if($arrayposts!=NULL){
   usort($arrayposts,"sortByID");
   foreach($arrayposts as $posts){
